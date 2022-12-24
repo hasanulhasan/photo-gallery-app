@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
+import Nav from './Components/Nav';
 
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <Nav></Nav>
       <h1>A simple photo Gallery App</h1>
     </div>
   );
