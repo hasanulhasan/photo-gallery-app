@@ -1,5 +1,5 @@
 import React from 'react';
-import Tiger from './Tiger';
+import Tiger from './Tiger/Tiger';
 
 const PhotoCategory = () => {
   return (
