@@ -1,11 +1,11 @@
-import './App.css';
 import Nav from './Components/Nav';
+import PhotoCategory from './Components/PhotoCategory/PhotoCategory';
 
 function App() {
   return (
-    <div className="App">
+    <div className="max-w-7xl mx-auto">
       <Nav></Nav>
-      <h1>A simple photo Gallery App</h1>
+      <PhotoCategory></PhotoCategory>
     </div>
   );
 }
