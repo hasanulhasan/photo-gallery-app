@@ -4,7 +4,7 @@ import SingleTiger from './SingleTiger';
 const Tiger = () => {
 
   const { data: tigers = [] } = useQuery({
-    // queryKey: ['tigers'],
+    queryKey: ['tigers'],
     queryFn: async () => {
       const res = await fetch('http://localhost:5000/animals');
       const data = await res.json();
@@ -20,7 +20,7 @@ const Tiger = () => {
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {
-            tigers.map(tiger => <SingleTiger key={tiger.id} tiger={tiger}></SingleTiger>)
+            tigers.map(tiger => <SingleTiger key={tiger._id} tiger={tiger}></SingleTiger>)
           }
         </div>
       </div>

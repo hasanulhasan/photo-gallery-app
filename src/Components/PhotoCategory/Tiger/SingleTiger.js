@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleTiger = ({ tiger }) => {
-  const { name, description, img, id } = tiger;
+  const { name, description, img, _id } = tiger;
   return (
     <div>
       <div className="max-w-sm">
@@ -15,7 +15,7 @@ const SingleTiger = ({ tiger }) => {
             {description}
           </p>
           <div className='flex justify-end'>
-            <Link to={`/details/${id}`}>
+            <Link to={`/details/${_id}`}>
               <Button gradientMonochrome="teal">
                 Details
               </Button>

@@ -1,42 +1,93 @@
+import { useQuery } from '@tanstack/react-query';
 import { Button, Card, Timeline } from 'flowbite-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CommentForm from './CommentForm';
+import Comments from './Comments';
 
 const AnimalDetails = () => {
+  const animals = useLoaderData();
+  const { name, description, img, _id } = animals;
+  const date = new Date();
+  const [comments, setCommets] = useState([]);
+  const [refresh, setRefresh] = useState(true);
+
+  const handleComment = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const review = form.review.value;
+    const commentInfo = {
+      name,
+      email,
+      review,
+      commentIdOn: _id,
+      date
+    }
+    // console.log(commentInfo)
+    // sending data to server
+    fetch('http://localhost:5000/comments', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(commentInfo)
+    })
+      .then(res => res.json())
+      .then(data => {
+        // console.log(data)
+        if (data.acknowledged) {
+          form.reset();
+          // alert('your review added')
+        }
+      })
+      .catch(err => console.error(err))
+  }
+  //receiving comments
+  // const { data: comments = [], refetch } = useQuery({
+  //   queryKey: ['_id'],
+  //   queryFn: async () => {
+  //     const res = await fetch(`http://localhost:5000/comments/${_id}`);
+  //     const data = await res.json();
+  //     return data;
+  //   }
+  // })
+  // console.log(comments);
+  useEffect(() => {
+    fetch(`http://localhost:5000/comments/${_id}`)
+      .then(res => res.json())
+      .then(data => {
+        setCommets(data)
+        setRefresh(!refresh);
+      })
+  }, [_id, refresh])
+
+
+
   return (
     <div>
       <div class="grid grid-cols-4 gap-4">
         {/* left side */}
         <div class="col-span-3">
           <div className="w-full">
-            <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
+            <Card imgSrc={img}>
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
+                {name}
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+                {description}
               </p>
             </Card>
           </div>
         </div>
         {/* right side for comment */}
-        <div>
-          <Timeline>
-            <Timeline.Item>
-              <Timeline.Point />
-              <Timeline.Content>
-                <Timeline.Time>
-                  February 2022
-                </Timeline.Time>
-                <Timeline.Title>
-                  Name of commenter
-                </Timeline.Title>
-                <Timeline.Body>
-                  Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.
-                </Timeline.Body>
-              </Timeline.Content>
-            </Timeline.Item>
-          </Timeline>
-          <form className="form-control mt-2 p-5">
+        <div><Timeline>
+          {
+            comments.map(comment => <Comments key={comment.id} comment={comment}></Comments>)
+          }
+        </Timeline>
+          <form onSubmit={handleComment} className="form-control mt-2 p-5">
             <h1 className="text-2xl text-info pb-4">Put a Review</h1>
             <input type="text" placeholder="Name" name='name' className="rounded-lg w-full mb-2" />
             <input type="email" placeholder="Email" name='email' className="rounded-lg w-full" />
@@ -46,7 +97,7 @@ const AnimalDetails = () => {
                 outline={true}
                 gradientDuoTone="cyanToBlue"
                 size="xl"
-              >
+                type='submit'>
                 Submit
               </Button>
             </div>
