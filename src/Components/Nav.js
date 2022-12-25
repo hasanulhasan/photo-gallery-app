@@ -1,4 +1,4 @@
-import { Button, Navbar } from 'flowbite-react';
+import { Button, Dropdown, Navbar } from 'flowbite-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -19,9 +19,23 @@ const Nav = () => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button>
-          Login
-        </Button>
+        <Dropdown
+          label="Category"
+          dismissOnClick={false}
+        >
+          <Dropdown.Item className='mx-3'>
+            Tiger
+          </Dropdown.Item>
+          <Dropdown.Item className='mx-3'>
+            Bird
+          </Dropdown.Item>
+          <Dropdown.Item className='mx-3'>
+            Cat
+          </Dropdown.Item>
+          <Dropdown.Item className='mx-3'>
+            Cow
+          </Dropdown.Item>
+        </Dropdown>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
@@ -29,7 +43,7 @@ const Nav = () => {
           <Link to='/'>Home</Link>
         </Navbar.Link>
         <Navbar.Link>
-          <Link to='/details'>About</Link>
+          <Link to='/details/:id'>About</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

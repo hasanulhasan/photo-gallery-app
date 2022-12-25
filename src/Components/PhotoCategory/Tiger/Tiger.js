@@ -1,29 +1,17 @@
-import { Button, Card } from 'flowbite-react';
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 import SingleTiger from './SingleTiger';
 
-const tigers = [
-  {
-    id: 1,
-    name: "The Bengal tiger",
-    description: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
-    img: "https://thumbs.dreamstime.com/b/tiger-portrait-horizontal-11392212.jpg"
-  },
-  {
-    id: 2,
-    name: "Siberian Tiger",
-    description: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
-    img: "https://media.istockphoto.com/id/1015669868/photo/single-tiger-in-the-snow.jpg?s=612x612&w=0&k=20&c=dmPM0VWvlfbRaSVoSJFiKsJouf2yjutf8Q8Yr-855RQ="
-  },
-  {
-    id: 3,
-    name: "Sumatran Tiger",
-    description: "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
-    img: "https://www.worldatlas.com/r/w1200/upload/68/bf/40/shutterstock-42692746.jpg"
-  }
-]
-
 const Tiger = () => {
+
+  const { data: tigers = [] } = useQuery({
+    // queryKey: ['tigers'],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:5000/animals');
+      const data = await res.json();
+      return data;
+    }
+  })
+
   return (
     <div>
       <div class="text-center text-gray-800 py-6 px-2">

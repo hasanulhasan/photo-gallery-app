@@ -41,10 +41,11 @@ const AnimalDetails = () => {
             <input type="text" placeholder="Name" name='name' className="rounded-lg w-full mb-2" />
             <input type="email" placeholder="Email" name='email' className="rounded-lg w-full" />
             <input type="text" placeholder="Your review" name='review' className="rounded-lg w-full my-2" required />
-            <div>
+            <div className='flex justify-center'>
               <Button
                 outline={true}
                 gradientDuoTone="cyanToBlue"
+                size="xl"
               >
                 Submit
               </Button>

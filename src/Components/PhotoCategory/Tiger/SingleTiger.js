@@ -20,7 +20,6 @@ const SingleTiger = ({ tiger }) => {
                 Details
               </Button>
             </Link>
-
           </div>
         </Card>
       </div>
