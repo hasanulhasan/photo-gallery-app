@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import Login from "../AuthProvider/Login";
 import AnimalDetails from "../Components/AnimalDetails/AnimalDetails";
-import About from "../Components/AnimalDetails/AnimalDetails";
-import PhotoCategory from "../Components/PhotoCategory/PhotoCategory";
+import AnimalCategory from "../Components/PhotoCategory/AnimalCategory";
 import Main from "../Layout/Main";
 
 const router = createBrowserRouter([
@@ -11,7 +11,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <PhotoCategory></PhotoCategory>
+        element: <AnimalCategory></AnimalCategory>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       },
       {
         path: '/details/:id',

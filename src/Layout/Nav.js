@@ -8,9 +8,9 @@ const Nav = () => {
       fluid={true}
       rounded={true}
     >
-      <Navbar.Brand href="https://flowbite.com/">
+      <Navbar.Brand href="/">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
+          src="https://cdn-icons-png.flaticon.com/512/9239/9239223.png"
           className="mr-3 h-6 sm:h-9"
           alt="Flowbite Logo"
         />
@@ -22,6 +22,7 @@ const Nav = () => {
         <Dropdown
           label="Category"
           dismissOnClick={false}
+          gradientMonochrome="teal"
         >
           <Dropdown.Item className='mx-3'>
             Tiger
@@ -43,7 +44,10 @@ const Nav = () => {
           <Link to='/'>Home</Link>
         </Navbar.Link>
         <Navbar.Link>
-          <Link to='/details/:id'>About</Link>
+          <Link to='/about'>About us</Link>
+        </Navbar.Link>
+        <Navbar.Link>
+          <Link to='/login'>Login</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>

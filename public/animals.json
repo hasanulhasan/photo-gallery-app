@@ -1,20 +1,65 @@
 [
   {
     "id": "1",
+    "category": "tiger",
     "name": "The Bengal tiger",
     "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
     "img": "https://thumbs.dreamstime.com/b/tiger-portrait-horizontal-11392212.jpg"
   },
   {
     "id": "2",
+    "category": "tiger",
     "name": "Siberian Tiger",
     "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
     "img": "https://media.istockphoto.com/id/1015669868/photo/single-tiger-in-the-snow.jpg?s=612x612&w=0&k=20&c=dmPM0VWvlfbRaSVoSJFiKsJouf2yjutf8Q8Yr-855RQ="
   },
   {
     "id": "3",
+    "category": "tiger",
     "name": "Sumatran Tiger",
     "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
     "img": "https://www.worldatlas.com/r/w1200/upload/68/bf/40/shutterstock-42692746.jpg"
+  },
+  {
+    "id": "4",
+    "category": "cat",
+    "name": "The Ashera",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://www.fetchpetcare.com/wp-content/uploads/2016/11/bigstock-Savannah-Cat-154079102.jpg"
+  },
+  {
+    "id": "5",
+    "category": "cat",
+    "name": "American curl",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://www.omlet.us/images/cache/1024/682/American-curl-shorthaired-cat-lying-facing-forward.jpg"
+  },
+  {
+    "id": "6",
+    "category": "cat",
+    "name": "Munchkin cat",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://media.kidadl.com/munchkin_cat_lifespan_69d765466a.jpg"
+  },
+  {
+    "id": "7",
+    "category": "bird",
+    "name": "Bohemian waxwing",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://render.fineartamerica.com/images/rendered/default/print/8/5.5/break/images/artworkimages/medium/2/bohemian-waxwings-peter-stahl.jpg"
+  },
+  {
+    "id": "8",
+    "category": "bird",
+    "name": "Scarlet Macaw",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://www.thesprucepets.com/thmb/17FIvtAIJck1Vl6Kv91Qd0UCPEE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-634869043-58a6e83f5f9b58a3c918ca12.jpg"
+  },
+  {
+    "id": "9",
+    "category": "bird",
+    "name": "Golden Pheasant",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://animalcorner.org/wp-content/uploads/2015/02/golden-pheasant-1.jpg"
   }
 ]
