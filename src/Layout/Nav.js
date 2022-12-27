@@ -1,8 +1,16 @@
 import { Button, Dropdown, Navbar } from 'flowbite-react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Nav = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then(() => { })
+      .catch(err => console.error(err))
+  }
+
   return (
     <Navbar
       fluid={true}
@@ -25,16 +33,10 @@ const Nav = () => {
           gradientMonochrome="teal"
         >
           <Dropdown.Item className='mx-3'>
-            Tiger
+            <Link to='/'>Animals</Link>
           </Dropdown.Item>
           <Dropdown.Item className='mx-3'>
-            Bird
-          </Dropdown.Item>
-          <Dropdown.Item className='mx-3'>
-            Cat
-          </Dropdown.Item>
-          <Dropdown.Item className='mx-3'>
-            Cow
+            <Link to='/plantcategory'>Plants</Link>
           </Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle />
@@ -46,11 +48,22 @@ const Nav = () => {
         <Navbar.Link>
           <Link to='/about'>About us</Link>
         </Navbar.Link>
-        <Navbar.Link>
-          <Link to='/login'>Login</Link>
-        </Navbar.Link>
+        {
+          user?.uid ? <>
+            <Navbar.Link onClick={handleLogout}>
+              Logout
+            </Navbar.Link>
+          </>
+            :
+            <>
+              <Navbar.Link>
+                <Link to='/login'>Login</Link>
+              </Navbar.Link>
+            </>
+        }
+
       </Navbar.Collapse>
-    </Navbar>
+    </Navbar >
   );
 };
 

@@ -22,45 +22,50 @@ const Login = () => {
 
 
   return (
-    <div>
-      <form className="flex flex-col gap-4">
-        <div>
-          <div className="mb-2 block">
-            <Label
-              htmlFor="email1"
-              value="Your email"
-            />
-          </div>
-          <TextInput
-            id="email1"
-            type="email"
-            placeholder="name@flowbite.com"
-            required={true}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label
-              htmlFor="password1"
-              value="Your password"
-            />
-          </div>
-          <TextInput
-            id="password1"
-            type="password"
-            required={true}
-          />
-        </div>
-        <div className="flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Label htmlFor="remember">
-            Remember me
-          </Label>
-        </div>
-        <Button onClick={googleButton}>
-          Submit
+    <div className='flex justify-center my-12'>
+      <div className='w-1/3'>
+        <Button className='w-full mb-4' onClick={googleButton} gradientMonochrome="cyan">
+          Login with Google
         </Button>
-      </form>
+        <form className="flex flex-col gap-4">
+          <div>
+            <div className="mb-2 block">
+              <Label
+                htmlFor="email1"
+                value="Your email"
+              />
+            </div>
+            <TextInput
+              id="email1"
+              type="email"
+              placeholder="name@flowbite.com"
+              required={true}
+            />
+          </div>
+          <div>
+            <div className="mb-2 block">
+              <Label
+                htmlFor="password1"
+                value="Your password"
+              />
+            </div>
+            <TextInput
+              id="password1"
+              type="password"
+              required={true}
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox id="remember" />
+            <Label htmlFor="remember">
+              Remember me
+            </Label>
+          </div>
+          <Button type='submit' gradientMonochrome="cyan" onClick={googleButton}>
+            Submit
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,13 +1,13 @@
-import { useQuery } from '@tanstack/react-query';
 import { Button, Card, Timeline } from 'flowbite-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import Comments from './Comments';
+import Comments from '../AnimalDetails/Comments';
 
-const AnimalDetails = () => {
-  const { user } = useContext(AuthContext)
+const PlantDetails = () => {
+  const { user } = useContext(AuthContext);
   const animals = useLoaderData();
+  console.log(animals)
   const { name, description, img, _id } = animals;
   const date = new Date();
   const [comments, setCommets] = useState([]);
@@ -106,4 +106,4 @@ const AnimalDetails = () => {
   );
 };
 
-export default AnimalDetails;
+export default PlantDetails;

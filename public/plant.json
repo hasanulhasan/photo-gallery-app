@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "category": "tree",
+    "name": "Japanese Cherry",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://www.kcpinternational.com/wp-content/uploads/2011/07/Spring-in-Tokyo.jpg"
+  },
+  {
+    "id": "2",
+    "category": "flower",
+    "name": "Water Lily",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://media.istockphoto.com/id/108222418/photo/brightly-colored-water-lily-floating-on-a-stil-pond.jpg?s=612x612&w=0&k=20&c=CZMBOkRhyFMDZdhlBdSJ4iYGEjrNGsubOqni9fNr7Io="
+  },
+  {
+    "id": "3",
+    "category": "insects",
+    "name": "Picasso Bug",
+    "description": "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    "img": "https://www.ourbreathingplanet.com/wp-content/uploads/2021/08/Picasso-Bug.jpg"
+  }
+]
