@@ -28,7 +28,7 @@ const AnimalDetails = () => {
     }
     // console.log(commentInfo)
     // sending data to server
-    fetch('http://localhost:5000/comments', {
+    fetch('https://photo-gallery-app-server.vercel.app/comments', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -45,18 +45,9 @@ const AnimalDetails = () => {
       })
       .catch(err => console.error(err))
   }
-  //receiving comments
-  // const { data: comments = [], refetch } = useQuery({
-  //   queryKey: ['_id'],
-  //   queryFn: async () => {
-  //     const res = await fetch(`http://localhost:5000/comments/${_id}`);
-  //     const data = await res.json();
-  //     return data;
-  //   }
-  // })
-  // console.log(comments);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/comments/${_id}`)
+    fetch(`https://photo-gallery-app-server.vercel.app/comments/${_id}`)
       .then(res => res.json())
       .then(data => {
         setCommets(data)

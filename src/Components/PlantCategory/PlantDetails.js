@@ -28,7 +28,7 @@ const PlantDetails = () => {
     }
 
     // sending data to server
-    fetch('http://localhost:5000/comments', {
+    fetch('https://photo-gallery-app-server.vercel.app/comments', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -48,7 +48,7 @@ const PlantDetails = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/comments/${_id}`)
+    fetch(`https://photo-gallery-app-server.vercel.app/comments/${_id}`)
       .then(res => res.json())
       .then(data => {
         setCommets(data)

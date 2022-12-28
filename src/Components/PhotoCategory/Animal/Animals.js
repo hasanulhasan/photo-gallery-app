@@ -6,7 +6,7 @@ const Animals = ({ animal }) => {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/animal/${category}`)
+    fetch(`https://photo-gallery-app-server.vercel.app/animal/${category}`)
       .then(res => res.json())
       .then(data => {
         setAnimals(data)

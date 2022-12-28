@@ -7,7 +7,7 @@ const Plants = ({ plant }) => {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/plant/${category}`)
+    fetch(`https://photo-gallery-app-server.vercel.app/plant/${category}`)
       .then(res => res.json())
       .then(data => {
         setPlants(data)

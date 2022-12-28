@@ -31,12 +31,12 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: < AnimalDetails ></AnimalDetails >,
-        loader: ({ params }) => fetch(`http://localhost:5000/animals/${params.id}`)
+        loader: ({ params }) => fetch(`https://photo-gallery-app-server.vercel.app/animals/${params.id}`)
       },
       {
         path: '/plantDetails/:id',
         element: <PlantDetails></PlantDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/plants/${params.id}`)
+        loader: ({ params }) => fetch(`https://photo-gallery-app-server.vercel.app/plants/${params.id}`)
       }
     ]
   }
