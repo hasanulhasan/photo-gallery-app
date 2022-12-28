@@ -83,7 +83,7 @@ const AnimalDetails = () => {
         {/* right side for comment */}
         <div><Timeline>
           {
-            comments.map(comment => <Comments key={comment.id} comment={comment}></Comments>)
+            comments.map(comment => <Comments key={comment._id} comment={comment}></Comments>)
           }
         </Timeline>
           <form onSubmit={handleComment} className="form-control mt-2 p-5">

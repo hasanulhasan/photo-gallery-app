@@ -2,8 +2,8 @@ import { Button, Card } from 'flowbite-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PlantCard = ({ tiger }) => {
-  const { name, description, img, _id } = tiger;
+const PlantCard = ({ singlePlant }) => {
+  const { name, description, img, _id } = singlePlant;
   return (
     <div className="max-w-sm">
       <Card imgSrc={img}>

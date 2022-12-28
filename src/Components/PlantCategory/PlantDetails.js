@@ -6,9 +6,9 @@ import Comments from '../AnimalDetails/Comments';
 
 const PlantDetails = () => {
   const { user } = useContext(AuthContext);
-  const animals = useLoaderData();
-  console.log(animals)
-  const { name, description, img, _id } = animals;
+  const plants = useLoaderData();
+
+  const { name, description, img, _id } = plants;
   const date = new Date();
   const [comments, setCommets] = useState([]);
   const [refresh, setRefresh] = useState(true);
@@ -26,7 +26,7 @@ const PlantDetails = () => {
       commentIdOn: _id,
       date
     }
-    // console.log(commentInfo)
+
     // sending data to server
     fetch('http://localhost:5000/comments', {
       method: 'POST',
@@ -45,16 +45,8 @@ const PlantDetails = () => {
       })
       .catch(err => console.error(err))
   }
-  //receiving comments
-  // const { data: comments = [], refetch } = useQuery({
-  //   queryKey: ['_id'],
-  //   queryFn: async () => {
-  //     const res = await fetch(`http://localhost:5000/comments/${_id}`);
-  //     const data = await res.json();
-  //     return data;
-  //   }
-  // })
-  // console.log(comments);
+
+
   useEffect(() => {
     fetch(`http://localhost:5000/comments/${_id}`)
       .then(res => res.json())
@@ -83,7 +75,7 @@ const PlantDetails = () => {
         {/* right side for comment */}
         <div><Timeline>
           {
-            comments.map(comment => <Comments key={comment.id} comment={comment}></Comments>)
+            comments.map(comment => <Comments key={comment._id} comment={comment}></Comments>)
           }
         </Timeline>
           <form onSubmit={handleComment} className="form-control mt-2 p-5">

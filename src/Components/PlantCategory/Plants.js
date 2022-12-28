@@ -24,7 +24,7 @@ const Plants = ({ plant }) => {
         <div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {
-              plants.map(tiger => <PlantCard key={tiger._id} tiger={tiger}></PlantCard>)
+              plants.map(singlePlant => <PlantCard key={singlePlant._id} singlePlant={singlePlant}></PlantCard>)
             }
           </div>
         </div>
