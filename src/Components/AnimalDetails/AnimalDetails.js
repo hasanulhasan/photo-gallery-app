@@ -26,7 +26,6 @@ const AnimalDetails = () => {
       commentIdOn: _id,
       date
     }
-    // console.log(commentInfo)
     // sending data to server
     fetch('https://photo-gallery-app-server.vercel.app/comments', {
       method: 'POST',
