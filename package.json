@@ -13,10 +13,14 @@
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "otp-input-react": "^0.3.0",
+    "react-icons": "^4.7.1",
+    "react-hot-toast": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../AuthProvider/Login";
+import PhoneInput from "../AuthProvider/PhoneInput";
 import About from "../Components/About/About";
 import AnimalDetails from "../Components/AnimalDetails/AnimalDetails";
 import AnimalCategory from "../Components/PhotoCategory/AnimalCategory";
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/phonelogin',
+        element: <PhoneInput/>
       },
       {
         path: '/about',
